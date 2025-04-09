@@ -1,1 +1,196 @@
-(function(_0x2452ab,_0xd058b6){const _0x5f3781=_0x466e,_0x2f4aae=_0x2452ab();while(!![]){try{const _0x5938b1=-parseInt(_0x5f3781(0x86))/0x1+parseInt(_0x5f3781(0x70))/0x2+-parseInt(_0x5f3781(0x76))/0x3*(parseInt(_0x5f3781(0x8a))/0x4)+parseInt(_0x5f3781(0x99))/0x5*(-parseInt(_0x5f3781(0x6d))/0x6)+-parseInt(_0x5f3781(0x7b))/0x7+-parseInt(_0x5f3781(0xa7))/0x8+-parseInt(_0x5f3781(0xa1))/0x9*(-parseInt(_0x5f3781(0x6b))/0xa);if(_0x5938b1===_0xd058b6)break;else _0x2f4aae['push'](_0x2f4aae['shift']());}catch(_0x48e6dd){_0x2f4aae['push'](_0x2f4aae['shift']());}}}(_0x126b,0x91257));import _0x1071b from'input';import{TelegramClient}from'telegram';import{StoreSession}from'telegram/sessions/StoreSession.js';import{Config}from'../../config/config.js';import{Core}from'../core/core.js';import{Helper}from'./helper.js';import _0x1ada46 from'./logger.js';import{botUrlList}from'../../accounts/bot_url_list.js';let sessionName='sessions';export async function onBoarding(){const _0x1849a4=_0x466e,_0x55f436=await _0x1071b['text'](_0x1849a4(0x7a));switch(parseInt(_0x55f436)){case 0x1:await sessionCreation(),await onBoarding();break;case 0x2:Helper[_0x1849a4(0x81)](_0x1849a4(0x9c)),await onBoarding();break;case 0x3:Helper[_0x1849a4(0x8b)](_0x1849a4(0x9c))[_0x1849a4(0x85)]===0x0?(console[_0x1849a4(0x8e)](_0x1849a4(0x98)),await onBoarding()):(await sessionSelection(),await processSingleSession(sessionName),await onBoarding());break;case 0x4:await processAllSessions(),await postProcessingMenu();break;default:console['error'](_0x1849a4(0x78)),await onBoarding();break;}}function _0x126b(){const _0x411476=['All\x20sessions\x20have\x20been\x20processed.\x0a\x0a1.\x20Return\x20to\x20Welcome\x20Menu\x0a2.\x20Exit\x20Program\x0a\x0aInput\x20your\x20choice:','message','1473840msXrRm','Bot\x20List:\x0a','21162270NAAoPk','\x20-\x20Created\x20and\x20connected','6kISYgh','bot','Query\x20Data\x20for\x20session\x20','626876FzXiZr','error','text','\x0aAggregated\x20Queries\x20from\x20All\x20Sessions:\x0a','<empty>\x0a\x0aPlease\x20enter\x20Session\x20Name:','Error\x20creating\x20session\x20','3BeCtRP','\x0a\x0aPlease\x20select\x20Session:','Invalid\x20input,\x20Please\x20try\x20again','Exiting\x20program...','Welcome\x20to\x20Telegram\x20Query\x20Getter\x20\x0aAuthor\x20:\x20Nofan\x20Rambe\x0a\x0aLet\x27s\x20get\x20started.\x0a1.\x20Create\x20Session.\x0a2.\x20Reset\x20Sessions\x0a3.\x20Get\x20Query\x0a4.\x20Process\x20All\x20Sessions\x0a\x0aInput\x20your\x20choice:','2213778PUyEBm','TELEGRAM_APP_ID','TELEGRAM_APP_HASH','\x20Error\x20-\x20','Invalid\x20bot\x20choice.','indexOf','resetSession','\x0aEnter\x20bot\x20number\x20to\x20connect:','Connected\x20to\x20session\x20','start','length','1133661QQNMNJ','disconnect','Your\x20session\x20List:\x0a\x0a','Session\x20','149852Auxcqw','getSession','\x0a\x0aYou\x20already\x20have\x20sessions,\x20cancel(CTRL+C)\x20or\x20create\x20new\x20Session:','No\x20sessions\x20available\x20to\x20process.','info','Enter\x20your\x20Telegram\x20Password:\x20','\x20-\x20Client\x20disconnected','createDir','process','Program\x20exited\x20by\x20user.','Error\x20processing\x20session\x20','forEach','Invalid\x20choice.\x20Please\x20try\x20again.','push','You\x20don\x27t\x20have\x20any\x20sessions,\x20please\x20create\x20one\x20first','817690YsArff','Enter\x20your\x20Telegram\x20Phone\x20Number:\x20','catch','sessions','log','Select\x20Query\x20Result\x20Type\x20?\x0a\x20\x0a1.\x20URI\x20Component\x20\x0a2.\x20JSON\x20String\x0a3.\x20Init\x20Params\x20(DEFAULT)\x0a\x20\x0aPlease\x20select\x20result\x20type\x20:','Enter\x20the\x20Telegram\x20Verification\x20Code\x20you\x20received:\x20','sessions/','9mTghZE','url','Error\x20disconnecting\x20client:','\x20-\x20Connected'];_0x126b=function(){return _0x411476;};return _0x126b();}async function sessionCreation(){const _0x2af7dd=_0x466e,_0x577ba6=Helper[_0x2af7dd(0x8b)]('sessions');let _0x593bf3='Your\x20session\x20List:\x0a\x0a';for(const _0x4a33c8 of _0x577ba6){_0x593bf3+=_0x577ba6[_0x2af7dd(0x80)](_0x4a33c8)+0x1+'.\x20'+_0x4a33c8+'\x0a';}_0x593bf3+=_0x577ba6['length']===0x0?_0x2af7dd(0x74):_0x2af7dd(0x8c);const _0x28e1db=await _0x1071b[_0x2af7dd(0x72)](_0x593bf3);sessionName=Helper[_0x2af7dd(0x91)](_0x28e1db);const _0xad04ca=new TelegramClient(new StoreSession(sessionName),Number(Config[_0x2af7dd(0x7c)]),Config[_0x2af7dd(0x7d)],{'connectionRetries':0xa,'connectionTimeout':0x1e});try{await _0xad04ca[_0x2af7dd(0x84)]({'phoneNumber':async()=>await _0x1071b[_0x2af7dd(0x72)](_0x2af7dd(0x9a)),'password':async()=>await _0x1071b[_0x2af7dd(0x72)](_0x2af7dd(0x8f)),'phoneCode':async()=>await _0x1071b[_0x2af7dd(0x72)]('Enter\x20the\x20Telegram\x20Verification\x20Code\x20you\x20received:\x20'),'onError':_0x50d954=>console[_0x2af7dd(0x9d)](_0x50d954)}),console[_0x2af7dd(0x9d)]('Session\x20created\x20and\x20logged\x20in\x20successfully.'),_0x1ada46['info']('Session\x20'+_0x28e1db+_0x2af7dd(0x6c));}catch(_0x57b37d){console[_0x2af7dd(0x71)](_0x2af7dd(0x75)+_0x28e1db+':',_0x57b37d),_0x1ada46['error'](_0x2af7dd(0x89)+_0x28e1db+_0x2af7dd(0x7e)+_0x57b37d[_0x2af7dd(0xa6)]);}finally{try{await _0xad04ca[_0x2af7dd(0x87)](),console[_0x2af7dd(0x9d)]('Client\x20disconnected.'),_0x1ada46[_0x2af7dd(0x8e)]('Session\x20'+_0x28e1db+_0x2af7dd(0x90));}catch(_0x37cc38){console[_0x2af7dd(0x71)](_0x2af7dd(0xa3),_0x37cc38);}}}function _0x466e(_0x4cf0a2,_0x1644c7){const _0x126b0d=_0x126b();return _0x466e=function(_0x466ef3,_0x2de02e){_0x466ef3=_0x466ef3-0x6a;let _0x152aed=_0x126b0d[_0x466ef3];return _0x152aed;},_0x466e(_0x4cf0a2,_0x1644c7);}async function sessionSelection(){const _0x31dc1f=_0x466e,_0x5ee5e3=Helper[_0x31dc1f(0x8b)](_0x31dc1f(0x9c));if(_0x5ee5e3[_0x31dc1f(0x85)]===0x0){console['info']('No\x20sessions\x20available.\x20Please\x20create\x20a\x20new\x20session.'),await sessionCreation();return;}let _0x5de0e9=_0x31dc1f(0x88);for(const _0x518df9 of _0x5ee5e3){_0x5de0e9+=_0x5ee5e3['indexOf'](_0x518df9)+0x1+'.\x20'+_0x518df9+'\x0a';}_0x5de0e9+=_0x31dc1f(0x77);const _0x34af8f=await _0x1071b['text'](_0x5de0e9),_0x407ef9=_0x5ee5e3[parseInt(_0x34af8f)-0x1];_0x407ef9?(sessionName=_0x31dc1f(0xa0)+_0x407ef9,console['info']('Using\x20session\x20'+_0x407ef9)):(console[_0x31dc1f(0x71)](_0x31dc1f(0x96)),await sessionSelection());}async function processSingleSession(_0x39e21e){const _0x19a223=_0x466e,_0x73b25a=await selectBot(),_0x5bcb0b=_0x73b25a['url'],_0x45fc8e=await selectQueryResultType(),_0x23af98=new TelegramClient(new StoreSession(_0x39e21e),Number(Config['TELEGRAM_APP_ID']),Config[_0x19a223(0x7d)],{'connectionRetries':0xa,'connectionTimeout':0xea60});try{await _0x23af98[_0x19a223(0x84)]({'phoneNumber':async()=>await _0x1071b[_0x19a223(0x72)](_0x19a223(0x9a)),'password':async()=>await _0x1071b['text'](_0x19a223(0x8f)),'phoneCode':async()=>await _0x1071b[_0x19a223(0x72)](_0x19a223(0x9f)),'onError':_0x27368d=>console['log'](_0x27368d)}),console[_0x19a223(0x9d)]('Connected.'),_0x1ada46[_0x19a223(0x8e)](_0x19a223(0x89)+_0x39e21e+_0x19a223(0xa4));const _0x1f13bc=new Core(_0x23af98,_0x39e21e,_0x73b25a[_0x19a223(0x6e)],_0x5bcb0b,_0x45fc8e),_0x28c076=await _0x1f13bc['process']();console['log'](_0x19a223(0x6f)+_0x39e21e+':\x20'+_0x28c076);}catch(_0x177cca){console[_0x19a223(0x71)]('Error\x20processing\x20session\x20'+_0x39e21e+':',_0x177cca);}finally{await _0x23af98[_0x19a223(0x87)]()[_0x19a223(0x9b)](()=>{}),_0x1ada46[_0x19a223(0x8e)](_0x19a223(0x89)+_0x39e21e+_0x19a223(0x90));}}async function processAllSessions(){const _0x32d7dd=_0x466e,_0x5276e6=Helper[_0x32d7dd(0x8b)](_0x32d7dd(0x9c));if(_0x5276e6[_0x32d7dd(0x85)]===0x0){console[_0x32d7dd(0x8e)](_0x32d7dd(0x8d));return;}const _0x3d6a36=await selectBot(),_0x25fc5e=_0x3d6a36[_0x32d7dd(0xa2)],_0x42fb47=await selectQueryResultType(),_0x3b8393=[];for(const _0x540004 of _0x5276e6){const _0x4b3a72=_0x32d7dd(0xa0)+_0x540004,_0x422977=new TelegramClient(new StoreSession(_0x4b3a72),Number(Config[_0x32d7dd(0x7c)]),Config[_0x32d7dd(0x7d)],{'connectionRetries':0xa,'connectionTimeout':0xea60});try{await _0x422977[_0x32d7dd(0x84)]({'phoneNumber':async()=>await _0x1071b[_0x32d7dd(0x72)](_0x32d7dd(0x9a)),'password':async()=>await _0x1071b[_0x32d7dd(0x72)](_0x32d7dd(0x8f)),'phoneCode':async()=>await _0x1071b['text'](_0x32d7dd(0x9f)),'onError':_0x103c0e=>console['log'](_0x103c0e)}),console['log'](_0x32d7dd(0x83)+_0x540004+'.');const _0x270c3d=new Core(_0x422977,_0x4b3a72,_0x3d6a36['bot'],_0x25fc5e,_0x42fb47),_0x28b1ed=await _0x270c3d[_0x32d7dd(0x92)]();_0x3b8393[_0x32d7dd(0x97)](_0x28b1ed);}catch(_0x4e50f0){console[_0x32d7dd(0x71)](_0x32d7dd(0x94)+_0x540004+':',_0x4e50f0);}finally{await _0x422977[_0x32d7dd(0x87)]()[_0x32d7dd(0x9b)](()=>{}),_0x1ada46[_0x32d7dd(0x8e)]('Session\x20'+_0x4b3a72+_0x32d7dd(0x90));}}console[_0x32d7dd(0x9d)](_0x32d7dd(0x73)),_0x3b8393[_0x32d7dd(0x95)]((_0x98929c,_0x3c5373)=>{const _0x189993=_0x32d7dd;console[_0x189993(0x9d)](_0x3c5373+0x1+'.\x20'+_0x98929c);});}async function selectBot(){const _0x36db3a=_0x466e;let _0x4c8bcd=_0x36db3a(0x6a);botUrlList[_0x36db3a(0x95)]((_0x9b36fa,_0x392ec3)=>{const _0x277d7c=_0x36db3a;_0x4c8bcd+=_0x392ec3+0x1+'.\x20'+_0x9b36fa[_0x277d7c(0x6e)]+'\x0a';});const _0x5b3d45=parseInt(await _0x1071b[_0x36db3a(0x72)](_0x4c8bcd+_0x36db3a(0x82)))-0x1,_0x157537=botUrlList[_0x5b3d45];if(!_0x157537)throw new Error(_0x36db3a(0x7f));return _0x157537;}async function selectQueryResultType(){const _0x460dd2=_0x466e;return await _0x1071b[_0x460dd2(0x72)](_0x460dd2(0x9e));}async function postProcessingMenu(){const _0x1e2f90=_0x466e,_0x3fa7e0=await _0x1071b[_0x1e2f90(0x72)](_0x1e2f90(0xa5));switch(parseInt(_0x3fa7e0)){case 0x1:await onBoarding();break;case 0x2:console['log'](_0x1e2f90(0x79)),_0x1ada46[_0x1e2f90(0x8e)](_0x1e2f90(0x93)),process['exit'](0x0);default:console[_0x1e2f90(0x71)]('Invalid\x20input,\x20Please\x20try\x20again.'),await postProcessingMenu();break;}}
+import _0x1071b from 'input';
+import { TelegramClient } from 'telegram';
+import { StoreSession } from 'telegram/sessions/StoreSession.js';
+import { Config } from '../../config/config.js';
+import { Core } from '../core/core.js';
+import { Helper } from './helper.js';
+import _0x1ada46 from './logger.js';
+import { botUrlList } from '../../accounts/bot_url_list.js';
+
+let sessionName = 'sessions';
+
+export async function onBoarding() {
+  const _0x55f436 = await _0x1071b.text("\nWelcome to Telegram Query Getter \nAuthor : Nofan Rambe\n\nLet's getting started.\n1. Create Session.\n2. Reset Sessions\n3. Get Query\n4. Process All Sessions\n \nInput your choice:");
+  switch (parseInt(_0x55f436)) {
+    case 0x1:
+      await sessionCreation();
+      await onBoarding();
+      break;
+    case 0x2:
+      Helper.resetSession("sessions");
+      await onBoarding();
+      break;
+    case 0x3:
+      if (Helper.getSession("sessions").length === 0x0) {
+        console.info("You don't have any sessions, please create one first");
+        await onBoarding();
+      } else {
+        await sessionSelection();
+        await processSingleSession(sessionName);
+        await onBoarding();
+      }
+      break;
+    case 0x4:
+      await processAllSessions();
+      await postProcessingMenu();
+      break;
+    default:
+      console.error("Invalid input, Please try again");
+      await onBoarding();
+      break;
+  }
+}
+async function sessionCreation() {
+  const _0x577ba6 = Helper.getSession('sessions');
+  let _0x593bf3 = "Your session List:\n\n";
+  for (const _0x4a33c8 of _0x577ba6) {
+    _0x593bf3 += _0x577ba6.indexOf(_0x4a33c8) + 0x1 + ". " + _0x4a33c8 + "\n";
+  }
+  _0x593bf3 += _0x577ba6.length === 0x0 ? "<empty>\n\nPlease enter Session Name:" : "\n\nYou already have sessions, cancel(CTRL+C) or create new Session:";
+  const _0x28e1db = await _0x1071b.text(_0x593bf3);
+  sessionName = Helper.createDir(_0x28e1db);
+  const _0xad04ca = new TelegramClient(new StoreSession(sessionName), Number(Config.TELEGRAM_APP_ID), Config.TELEGRAM_APP_HASH, {
+    'connectionRetries': 0xa,
+    'connectionTimeout': 0x1e
+  });
+  try {
+    await _0xad04ca.start({
+      'phoneNumber': async () => await _0x1071b.text("Enter your Telegram Phone Number: "),
+      'password': async () => await _0x1071b.text("Enter your Telegram Password: "),
+      'phoneCode': async () => await _0x1071b.text("Enter the Telegram Verification Code you received: "),
+      'onError': _0x50d954 => console.log(_0x50d954)
+    });
+    console.log("Session created and logged in successfully.");
+    _0x1ada46.info("Session " + _0x28e1db + " - Created and connected");
+  } catch (_0x57b37d) {
+    console.error("Error creating session " + _0x28e1db + ':', _0x57b37d);
+    _0x1ada46.error("Session " + _0x28e1db + " Error - " + _0x57b37d.message);
+  } finally {
+    try {
+      await _0xad04ca.disconnect();
+      console.log("Client disconnected.");
+      _0x1ada46.info("Session " + _0x28e1db + " - Client disconnected");
+    } catch (_0x37cc38) {
+      console.error("Error disconnecting client:", _0x37cc38);
+    }
+  }
+}
+async function sessionSelection() {
+  const _0x5ee5e3 = Helper.getSession("sessions");
+  if (_0x5ee5e3.length === 0x0) {
+    console.info("No sessions available. Please create a new session.");
+    await sessionCreation();
+    return;
+  }
+  let _0x5de0e9 = "Your session List:\n\n";
+  for (const _0x518df9 of _0x5ee5e3) {
+    _0x5de0e9 += _0x5ee5e3.indexOf(_0x518df9) + 0x1 + ". " + _0x518df9 + "\n";
+  }
+  _0x5de0e9 += "\n\nPlease select Session:";
+  const _0x34af8f = await _0x1071b.text(_0x5de0e9);
+  const _0x407ef9 = _0x5ee5e3[parseInt(_0x34af8f) - 0x1];
+  if (_0x407ef9) {
+    sessionName = "sessions/" + _0x407ef9;
+    console.info("Using session " + _0x407ef9);
+  } else {
+    console.error("Invalid choice. Please try again.");
+    await sessionSelection();
+  }
+}
+async function processSingleSession(_0x39e21e) {
+  const _0x73b25a = await selectBot();
+  const _0x5bcb0b = _0x73b25a.url;
+  const _0x45fc8e = await selectQueryResultType();
+  const _0x23af98 = new TelegramClient(new StoreSession(_0x39e21e), Number(Config.TELEGRAM_APP_ID), Config.TELEGRAM_APP_HASH, {
+    'connectionRetries': 0xa,
+    'connectionTimeout': 0xea60
+  });
+  try {
+    await _0x23af98.start({
+      'phoneNumber': async () => await _0x1071b.text("Enter your Telegram Phone Number: "),
+      'password': async () => await _0x1071b.text("Enter your Telegram Password: "),
+      'phoneCode': async () => await _0x1071b.text("Enter the Telegram Verification Code you received: "),
+      'onError': _0x27368d => console.log(_0x27368d)
+    });
+    console.log('Connected.');
+    _0x1ada46.info("Session " + _0x39e21e + " - Connected");
+    const _0x1f13bc = new Core(_0x23af98, _0x39e21e, _0x73b25a.bot, _0x5bcb0b, _0x45fc8e);
+    const _0x28c076 = await _0x1f13bc.process();
+    console.log("Query Data for session " + _0x39e21e + ": " + _0x28c076);
+  } catch (_0x177cca) {
+    console.error("Error processing session " + _0x39e21e + ':', _0x177cca);
+  } finally {
+    await _0x23af98.disconnect()["catch"](() => {});
+    _0x1ada46.info("Session " + _0x39e21e + " - Client disconnected");
+  }
+}
+async function processAllSessions() {
+  const _0x5276e6 = Helper.getSession("sessions");
+  if (_0x5276e6.length === 0x0) {
+    console.info("No sessions available to process.");
+    return;
+  }
+  const _0x3d6a36 = await selectBot();
+  const _0x25fc5e = _0x3d6a36.url;
+  const _0x42fb47 = await selectQueryResultType();
+  const _0x3b8393 = [];
+  for (const _0x540004 of _0x5276e6) {
+    const _0x4b3a72 = "sessions/" + _0x540004;
+    const _0x422977 = new TelegramClient(new StoreSession(_0x4b3a72), Number(Config.TELEGRAM_APP_ID), Config.TELEGRAM_APP_HASH, {
+      'connectionRetries': 0xa,
+      'connectionTimeout': 0xea60
+    });
+    try {
+      await _0x422977.start({
+        'phoneNumber': async () => await _0x1071b.text("Enter your Telegram Phone Number: "),
+        'password': async () => await _0x1071b.text("Enter your Telegram Password: "),
+        'phoneCode': async () => await _0x1071b.text("Enter the Telegram Verification Code you received: "),
+        'onError': _0x103c0e => console.log(_0x103c0e)
+      });
+      console.log("Connected to session " + _0x540004 + '.');
+      const _0x270c3d = new Core(_0x422977, _0x4b3a72, _0x3d6a36.bot, _0x25fc5e, _0x42fb47);
+      const _0x28b1ed = await _0x270c3d.process();
+      _0x3b8393.push(_0x28b1ed);
+    } catch (_0x4e50f0) {
+      console.error("Error processing session " + _0x540004 + ':', _0x4e50f0);
+    } finally {
+      await _0x422977.disconnect()["catch"](() => {});
+      _0x1ada46.info("Session " + _0x4b3a72 + " - Client disconnected");
+    }
+  }
+  console.log("\nAggregated Queries from All Sessions:\n");
+  _0x3b8393.forEach((_0x98929c, _0x3c5373) => {
+    console.log(_0x3c5373 + 0x1 + ". " + _0x98929c);
+  });
+}
+async function selectBot() {
+  let _0x4c8bcd = "Bot List:\n";
+  botUrlList.forEach((_0x9b36fa, _0x392ec3) => {
+    _0x4c8bcd += _0x392ec3 + 0x1 + ". " + _0x9b36fa.bot + "\n";
+  });
+  const _0x5b3d45 = parseInt(await _0x1071b.text(_0x4c8bcd + "\nEnter bot number to connect:")) - 0x1;
+  const _0x157537 = botUrlList[_0x5b3d45];
+  if (!_0x157537) {
+    throw new Error("Invalid bot choice.");
+  }
+  return _0x157537;
+}
+async function selectQueryResultType() {
+  return await _0x1071b.text("Select Query Result Type ?\n \n1. URI Component \n2. JSON String\n3. Init Params (DEFAULT)\n \nPlease select result type :");
+}
+async function postProcessingMenu() {
+  const _0x3fa7e0 = await _0x1071b.text("All sessions have been processed.\n\n1. Return to Welcome Menu\n2. Exit Program\n\nInput your choice:");
+  switch (parseInt(_0x3fa7e0)) {
+    case 0x1:
+      await onBoarding();
+      break;
+    case 0x2:
+      console.log("Exiting program...");
+      _0x1ada46.info("Program exited by user.");
+      process.exit(0x0);
+    default:
+      console.error("Invalid input, Please try again.");
+      await postProcessingMenu();
+      break;
+  }
+}
