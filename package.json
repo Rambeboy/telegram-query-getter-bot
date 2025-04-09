@@ -12,7 +12,7 @@
     "build": "javascript-obfuscator app --output dist --config build-config.json"
   },
   "keywords": [
-    "telegram-query-getter" 
+    "telegram-query-getter",
     "query-web",
     "nodejs",
     "getter-query",
