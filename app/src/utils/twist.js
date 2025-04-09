@@ -10,7 +10,7 @@ import { botUrlList } from '../../accounts/bot_url_list.js';
 let sessionName = 'sessions';
 
 export async function onBoarding() {
-  const _0x55f436 = await _0x1071b.text("\nWelcome to Telegram Query Getter \nAuthor : Nofan Rambe\n\nLet's getting started.\n1. Create Session.\n2. Reset Sessions\n3. Get Query\n4. Process All Sessions\n \nInput your choice:");
+  const _0x55f436 = await _0x1071b.text("Welcome to Telegram Query Getter \nAuthor : Nofan Rambe\n \nLet's getting started.\n1. Create Session.\n2. Reset Sessions\n3. Get Query\n4. Process All Sessions\n \nInput your choice:");
   switch (parseInt(_0x55f436)) {
     case 0x1:
       await sessionCreation();
